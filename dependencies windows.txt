@@ -1,0 +1,13 @@
+send2trash
+requests
+beautifulsoup4
+selenium
+openpyxl
+PyPDF2
+python-docx (install python-docx, not docx)
+imapclient
+pyzmail
+twilio
+pillow
+
+pyautogui
