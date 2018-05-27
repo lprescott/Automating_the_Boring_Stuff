@@ -6,18 +6,19 @@ The examples contained within the book are in the [Examples](https://github.com/
 ### Dependencies
     Windows: pip install ...
     OS X or Linux: pip3 install ...
-send2trash
-requests
-beautifulsoup4
-selenium
-openpyxl
-PyPDF2
-python-docx (install python-docx, not docx)
-imapclient
-pyzmail
-twilio
-pillow
-pyobjc-core (on OS X only)
-pyobjc (on OS X only)
-python3-xlib (on Linux only)
-pyautogui
+
+    send2trash
+    requests
+    beautifulsoup4
+    selenium
+    openpyxl
+    PyPDF2
+    python-docx (install python-docx, not docx)
+    imapclient
+    pyzmail
+    twilio
+    pillow
+    pyobjc-core (on OS X only)
+    pyobjc (on OS X only)
+    python3-xlib (on Linux only)
+    pyautogui
