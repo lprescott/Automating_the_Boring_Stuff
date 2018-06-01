@@ -47,4 +47,4 @@ else:
     print('No phone numbers or email addresses found.')
 
 # Wait for user input
-input("\nPress Enter to exit...")
+input("\nPress Enter to exit...\n")

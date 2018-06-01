@@ -4,10 +4,9 @@ beautifulsoup4
 selenium
 openpyxl
 PyPDF2
-python-docx (install python-docx, not docx)
+python-docx
 imapclient
 pyzmail
 twilio
 pillow
-python3-xlib
 pyautogui
