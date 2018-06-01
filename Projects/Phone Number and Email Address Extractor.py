@@ -3,7 +3,8 @@ import re, pyperclip as clipboard
 
 # Get the text off the clipboard.
 # Wait for user input
-input("\nPress Enter when String to be searched is on clipboard...")
+input("\nPress Enter when String to be searched is on clipboard...\n")
+
 user_input = str(clipboard.paste())
 
 # Find all phone numbers and email addresses in the text.
@@ -27,14 +28,23 @@ emailRegex = re.compile(r'''(
     )''', re.VERBOSE)
     
 # search
-phone_numbers = phoneRegex.findall(user_input)
-print(phone_numbers)
+matches = []
+for groups in phoneRegex.findall(user_input):
+    phoneNum = '-'.join([groups[1], groups[3], groups[5]])
+    if groups[8] != '':
+        phoneNum += ' x' + groups[8]
+    matches.append(phoneNum)
 
-email_addresses = emailRegex.findall(user_input)
-print(email_addresses)
-
-
-# Paste them onto the clipboard.
+for groups in emailRegex.findall(user_input):
+    matches.append(groups[0])
+    
+# paste them onto the clipboard.
+if len(matches) > 0:
+    clipboard.copy('\n'.join(matches))
+    print('Copied to clipboard:')
+    print('\n'.join(matches))
+else:
+    print('No phone numbers or email addresses found.')
 
 # Wait for user input
 input("\nPress Enter to exit...")
