@@ -30,9 +30,11 @@ else:
 
 # Generate 35 quiz files.
 for quizNum in range(35):
+    # names
     quizName = "quiz" + str(quizNum + 1) + ".txt"   
     answerKeyName = "answerkey" + str(quizNum + 1) + ".txt" 
-    
+
+    # paths
     quizPath = os.path.join(os.getcwd(), "Quizzes", quizName)
     keyPath = os.path.join(os.getcwd(), "Quizzes", answerKeyName)
 
@@ -40,7 +42,7 @@ for quizNum in range(35):
     tempQuiz = open(quizPath, 'w')
     tempKey = open(keyPath, "w")
 
-    # TODO: Write out the header for the quiz.
+    # Write out the header for the quiz.
     tempQuiz.write(str(quizNum + 1) + "\n")
     tempQuiz.write("Name: __________________________\n")
     tempQuiz.write("Date: __/__/____\n")
@@ -58,6 +60,7 @@ for quizNum in range(35):
 
     # Loop through all 50 states, making a question for each.
     for questionNum in range(50):
+
         # Get right and wrong answers.
         correctAnswer = capitals[states[questionNum]]
         wrongAnswers = list(capitals.values())
@@ -75,5 +78,7 @@ for quizNum in range(35):
         # Write the answer key to a file.
         tempKey.write('%s. %s\n' % (questionNum + 1, 'ABCD'[
             answerOptions.index(correctAnswer)]))
+            
+    # close files
     tempKey.close()
     tempQuiz.close()
